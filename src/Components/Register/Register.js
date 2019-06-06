@@ -21,6 +21,7 @@ class Register extends Component{
                    <div>密码：<input type="password" placeholder="情输入密码"/></div> 
                     <div>邮箱：<input type="text" placeholder="请输入邮箱号"/></div>
                     <div>手机号：<input type="text" placeholder="请输入手机号"/></div>
+                    
                 </div>
             </div>
         )
