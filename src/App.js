@@ -1,10 +1,10 @@
-import React from 'react';
+import React,{Component,Fragment} from 'react';
 import './App.css';
-import { Drawer, List, NavBar, Icon } from 'antd-mobile';
-import { BrowserRouter as Router, Route, Link,NavLink,Switch } from "react-router-dom";
-import {routes,RouteWithSubRoute} from './Router/router'
+import { Carousel,Button, WhiteSpace} from 'antd-mobile';
+import { BrowserRouter as Router, Route, Link,NavLink,Switch,Redirect } from "react-router-dom";
+import {routes,routesL,RouteWithSubRoute} from './Router/router'
 
-class App extends React.Component{
+class App extends Component{
   constructor(props){
     super(props);
     this.state={
@@ -27,11 +27,23 @@ class App extends React.Component{
                       <RouteWithSubRoute key={item.name} {...item}/>
                     )
                 })
+              },
+              {
+                routesL.map((item,index)=>{
+                  return(
+                    <RouteWithSubRoute key={item.name} {...item}/>
+                  )
+                })
+              },
+              {
+                <Route path="/" render={()=>{
+                   return (<Redirect to="/home"/>)   
+              }}></Route>
               }
             </Switch>
             <div className='Footer'>
             {routes.map((item, index) => {
-                return (<div key={item.index} 
+                return (<div key={item.index+item.name} 
                   onClick={this.pushView.bind(this,item)}
                 >
             <NavLink to={item.path} >

@@ -1,0 +1,18 @@
+.Register .Title{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    background: red;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .Register .ContentRegister{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+
+  }

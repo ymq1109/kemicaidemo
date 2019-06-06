@@ -12,4 +12,30 @@
   .Title i{
     font-size: 30px;
   }
+ .Profile .Content .BTN{
+   width: 100%;
+   height: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   font-size: 18px;
+   color:gray
+ }
+ .Profile .Content .BTN h4{
+   color: steelblue;
+   font-size: 15px;
+ }
+ .Profile .Content .OtherBTN{
+  width: 100%;
+  height: 200px;
+  color:gray;
+  font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ }
+ .Profile .Content .OtherBTN  div{
+   width: 100px;
+   height: 100px;
+ }
  

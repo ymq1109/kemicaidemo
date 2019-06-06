@@ -9,6 +9,7 @@
   left: 0;
   bottom: 0;
   text-align: center;
+  touch-action: none;
 }
 
 .Footer{
