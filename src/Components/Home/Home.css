@@ -1,0 +1,55 @@
+.Title{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    background: red;
+    color: white;
+  }
+  .Content {
+    width: 100%;
+    height: 630px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: scroll;
+  }
+  .Content>div{  
+    width: 50%;
+    height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 5px auto;
+  }
+  .Imag{
+    width: 50%;
+   
+  }
+ .Imag img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .Content .Font {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+  }
+  .Font h4{
+    display: inline-block;
+    height: 20px;
+  }
+.Font span{
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  color: gray;
+}

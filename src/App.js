@@ -1,52 +1,51 @@
 import React from 'react';
 import './App.css';
-// import { Button } from 'antd-mobile';
-// import 'antd-mobile/dist/antd-mobile.css'; 
 import { Drawer, List, NavBar, Icon } from 'antd-mobile';
-
+import { BrowserRouter as Router, Route, Link,NavLink,Switch } from "react-router-dom";
+import {routes,RouteWithSubRoute} from './Router/router'
 
 class App extends React.Component{
   constructor(props){
     super(props);
+    this.state={
+      title:'购彩'
+    }
   }
-    state = {
-      open: true,
-    }
-    onOpenChange = (...args) => {
-      console.log(args);
-      this.setState({ open: !this.state.open });
-    }
+  pushView=(item)=>{
+    this.setState({
+      title: item.name
+    })
+  }
     render() {
-      // fix in codepen
-      const sidebar = (<List>
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((i, index) => {
-          if (index === 0) {
-            return (<List.Item key={index}
-              thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-              multipleLine
-            >Category</List.Item>);
-          }
-          return (<List.Item key={index}
-            thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-          >Category{index}</List.Item>);
+      return (    
+      <div className="App"> 
+        <Router>
+        <Switch>
+              {
+                routes.map((item,index)=>{
+                    return (
+                      <RouteWithSubRoute key={item.name} {...item}/>
+                    )
+                })
+              }
+            </Switch>
+            <div className='Footer'>
+            {routes.map((item, index) => {
+                return (<div key={item.index} 
+                  onClick={this.pushView.bind(this,item)}
+                >
+            <NavLink to={item.path} >
+            <i className={"iconfont "+item.icon}></i> 
+              {item.name} </NavLink>
+           </div>);
         })}
-      </List>);
-  
-      return (<div>
-        <NavBar icon={<Icon type="ellipsis" />} onLeftClick={this.onOpenChange}>Basic</NavBar>
-        <Drawer
-          className="my-drawer"
-          style={{ minHeight: document.documentElement.clientHeight }}
-          enableDragHandle
-          contentStyle={{ color: '#A6A6A6', textAlign: 'center', paddingTop: 42 }}
-          sidebar={sidebar}
-          open={this.state.open}
-          onOpenChange={this.onOpenChange}
-        >
-          Click upper-left corner
-        </Drawer>
-      </div>);
+            </div>
+        </Router>
+      </div>
+      
+      )
     }
-}
+  }
+
 
 export default App;

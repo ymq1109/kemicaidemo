@@ -1,6 +1,7 @@
 {
   
     "plugins": [
-      ["import", { "libraryName": "antd-mobile", "style": "css" }] 
+      ["import", { "libraryName": "antd-mobile", "style": "css" }] ,
+      ["@babel/plugin-syntax-dynamic-import"]
     ]
   }
