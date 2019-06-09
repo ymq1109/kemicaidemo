@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import './Ssq.css'
 class Ssq extends Component{
     constructor(props){
         super(props)

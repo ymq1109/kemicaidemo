@@ -19,10 +19,7 @@ export const routesL=[
         component:Home,
         icon:'icon-shouye',
         name:'购彩', 
-        children:[
-            {path:'/home/Ssq',name:'双色球',component:loadable(()=>import('../Components/Home/Ssq'))},
-            {path:'/home/BigHip',name:'大乐透',component:loadable(()=>import('../Components/Home/BigHip'))}
-        ]
+       
     },
 
 ]
@@ -34,7 +31,8 @@ export const routes=[
         name:'购彩', 
         children:[
             {path:'/home/Ssq',name:'双色球',component:loadable(()=>import('../Components/Home/Ssq'))},
-            {path:'/home/BigHip',name:'大乐透',component:loadable(()=>import('../Components/Home/BigHip'))}
+            {path:'/home/BigHip',name:'大乐透',component:loadable(()=>import('../Components/Home/BigHip'))},
+            {path:'/home/S3d',name:'大乐透',component:loadable(()=>import('../Components/Home/S3d'))}
         ]
     },
     {path:'/onebye',icon:'icon-hongbao',name:'一元购',component:OneBye},
